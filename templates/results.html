@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secant Method Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/results.css') }}">
+</head>
+<body>
+    <!-- Animated background shapes -->
+    <div class="bg-shape"></div>
+    <div class="bg-shape"></div>
+    <div class="bg-shape"></div>
+    <div class="bg-shape"></div>
+
+    <div class="container">
+        <div class="results-container">
+            <h2>Iteration Results</h2>
+            <table style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Iteration</th>
+                        <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">xₙ</th>
+                        <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">f(xₙ)</th>
+                        <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">xₙ₊₁</th>
+                        <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">f(xₙ₊₁)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for line in output[1:] %}
+                        {% if 'Iteration' in line %}
+                            {% set parts = line.split(', ') %}
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">{{ loop.index }}</td>  <!-- loop.index0 starts from 0 -->
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">{{ parts[1].split('=')[1] }}</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">{{ parts[2].split('=')[1] }}</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">{{ parts[3].split('=')[1] }}</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">{{ parts[4].split('=')[1] }}</td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        
+        <div class="plot-container">
+            <h2>Function Plot</h2>
+            <img src="{{ plot_path }}" alt="Function Plot">
+        </div>
+        
+        <div class="button-container">
+            <a href="{{ url_for('index') }}" class="back-button">Go Back</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secant Method Input</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+    <!-- Animated background shapes -->
+    <div class="bg-shape"></div>
+    <div class="bg-shape"></div>
+    <div class="bg-shape"></div>
+
+    <div class="container">
+        <h1>Secant Method Input</h1>
+        <form method="POST">
+            <div class="form-group">
+                <label for="x0">Enter First Guess (x0):</label>
+                <input type="text" name="x0" id="x0" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="x1">Enter Second Guess (x1):</label>
+                <input type="text" name="x1" id="x1" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="e">Tolerable Error (e):</label>
+                <input type="text" name="e" id="e" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="N">Maximum Steps (N):</label>
+                <input type="text" name="N" id="N" required>
+            </div>
+            
+            <input type="submit" value="Start Secant Method" class="submit-btn">
+        </form>
+        
+        {% if error %}
+            <div class="error-message">{{ error }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
