@@ -2,8 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, send_file
 import numpy as np
 import matplotlib.pyplot as plt
 import os
-import math
-from decimal import Decimal, getcontext, ROUND_DOWN, ROUND_UP
+from decimal import Decimal, ROUND_DOWN, ROUND_UP
 
 app = Flask(__name__)
 
@@ -14,7 +13,7 @@ def round_school_6(x):
     d = abs(d)
 
     # Ambil digit ke-7
-    str_d = str(d.quantize(Decimal('0.0000000001')))  # 10 digit
+    str_d = str(d.quantize(Decimal('0.0000000001')))
     int_part, dec_part = str_d.split('.')
     seventh = int(dec_part[6]) if len(dec_part) > 6 else 0
 
@@ -137,4 +136,8 @@ def index():
     return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(
+        port=5000,
+        host='0.0.0.0',
+        debug=True
+        )
