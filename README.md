@@ -10,25 +10,25 @@ A tool to input a function to determine two starting points, and then iterativel
 
 ## Installation and Usage
 
-### 1. Clone Repository
+1. Clone Repository
 
 ```bash
 git clone https://github.com/zidankusumafirdaus/Secant-Method.git
 ```
 
-### 2. Go to Project Directory
+2. Go to Project Directory
 
 ```bash
 cd Secant-Method
 ```
 
-### 3. Installation Dependencies
+3. Installation Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Run the App
+4. Run the App
 
 ```bash
 python app.py
