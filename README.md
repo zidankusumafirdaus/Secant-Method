@@ -8,6 +8,10 @@ A tool to input a function to determine two starting points, and then iterativel
 ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
 ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
 
+## Pages
+![InputPage](static/InputPage.jpg)
+![OutputPage](static/OutputPage.jpg)
+
 ## Installation and Usage
 
 1. Clone Repository
